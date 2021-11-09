@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-
-
 class Jarvis
 
   def initialize
@@ -10,26 +8,125 @@ class Jarvis
       "How are you doing this evening sir?",
       "How's your day going sir?",
     ]
+    @activities = [
+      "creating Iron Man suits",
+      "playing Q-Zar laser tag",
+      "talking to friends online",
+      "contacting the area 51 base",
+      "baking a cake",
+      "building the iron man suit " + random_suit,
+      "creating the " + random_suit,
+      "designing the new " + random_suit,
+      "going to " + place,
+      "playing with my " + thing,
+    ]
   end
 
   def greeting
     return @greetings.sample
   end
 
+  def random_suit
+    File.readlines("iron_man_suits.txt").map(&:chomp).sample
+  end
+
+  def activity
+    return @activities.sample
+  end
+
+  def place
+    [
+      "Rustwater",
+      "McDonalds",
+      "Disneyland",
+      "Las Vegas",
+      "Library",
+      "Target",
+      "China",
+      "Red Lobster",
+      "Great America",
+      "Mountain Mike's",
+      "Dave and Buster's",
+      "Santa Cruz Beach Boardwalk",
+      "Zoo",
+    ].sample
+  end
+
+  def thing
+    [
+      "Arc Reactor",
+      "Super advanced chainsaw",
+      "Hot Link",
+      "Paperclip",
+      "Computers",
+      "Google Sketchup",
+      "bottle of soy sauce",
+      "Google Home",
+      "Jimmy Neutron Boy Genius DVD",
+      "Apple TV",
+      "Bag of Tortilla chips",
+      "BBQ Grill",
+      "Video camera",
+      "Framed pictures",
+      "toys",
+    ].sample
+  end
+
+  def verb
+    [
+      "mowing",
+      "studying",
+      "typing",
+      "designing",
+      "practicing",
+      "reading",
+      "watching",
+      "eating",
+      "playing",
+      "caring",
+      "loving",
+    ].sample
+  end
+
+  def adjective
+    [
+      "sticky",
+      "gooey",
+      "crunchy",
+      "friendly",
+      "sour",
+      "rough",
+      "spicy",
+      "gentle",
+      "grumpy",
+    ].sample
+  end
+
+  def times
+    [
+      "three o'clock",
+      "right now",
+      "tomorrow",
+      "on my birthday",
+      "on christmas",
+      "in just a second",
+      "in a minute",
+    ].sample
+  end
+
+  def change_subject
+    [
+      "How about those " + thing + ", I hear it's very " + adjective,
+      "How about we meet up " + times,
+      "Have you ever been to " + place + "?",
+      "I hear " + place + " is " + adjective + " to visit " + times,
+    ].sample
+  end
+
   def reply(prompt)
     return case prompt
     when /^hi|hello/i
       greeting
-    when /how much/i
-      "Beer is 5 gold and mutton is 10 gold."
-    when /need/i
-      "I've got what you need, supplies for the journey. Torches, swords, guns and shoes."
-    when /buy.*gun/i
-      "A gun costs 500 gold"
-    when /buy.*torch/i
-      "A torch costs 20 gold"
-    when /buy.*chicken/i
-      "chicken is 5 gold a piece"
     when /buy.*(duck|geese)/i
       "we don't have birds, try the farmer down the road"
     when /weather/i
@@ -38,24 +135,36 @@ class Jarvis
       "you're welcome"
     when /how (about|are) you/i
       "I'm doing great, thanks for asking"
+    when /(going|doing) good/i
+      "that's great, I'm so happy for you. Shall we get started on " + activity
     when /welcome/i
       "totally"
     when /what are we going to do|what should we do/i
-      "maybe we can design your own suit, sir?"
+      activity
     when /plan/i
       "maybe we can have some visitors over"
     when /invite/i
       "maybe we can invite some friends, sir"
     when /great/i
-      "that's fantastic!"
+      "that's " + adjective + "!"
     when /awesome|cool/i
-      "when do you want to start designing your own suit sir?"
+      "I know, right?"
     when /later/i
       "what time sir?"
     when /how about (\d+:\d+|\d+)/i
       "yes, #{$1} sounds great. I'll make plans"
+    when /iron man suit/i
+      "What kind of iron man suit do you have in mind for me?"
+    when /going fine|pretty well/
+      "Good to hear"
+    when /what .* doing/
+      activity
+    when / eat /
+      "I like to eat " + adjective + " food like they serve at " + place
+    when /when/
+      "Let's do " + activity + " at " + times
     else
-      "I didn't hear you"
+      change_subject
     end
   end
 end
