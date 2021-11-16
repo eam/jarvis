@@ -1,0 +1,70 @@
+$ ruby friday.rb 
+How are you doing this evening sir?
+Good, how about you?
+I'm doing great, thanks for asking
+you're welcome
+totally
+so, what are we working on?
+How about we meet up tomorrow
+good idea
+How about those Computers, I hear it's very friendly
+that sounds interesting
+I hear Las Vegas is crunchy to visit in just a second
+vegas is fancy but hot
+How about we meet up in just a second
+cool
+I know, right?
+what time?
+How about we meet up right now
+that's great
+that's grumpy!
+what do you mean, that's grump?
+How about those Apple TV, I hear it's very crunchy
+
+$ ruby friday.rb 
+Hello Sir
+hello friday
+greetings good sir
+what is our plan for the day?
+maybe we can have some visitors over
+ok, sounds cool
+I know, right?
+who should we invite, friday?
+maybe we can invite some friends, sir
+that's cool
+I know, right?
+what should we do with our friends, friday?
+baking a cake
+wow, that's cool I love cake
+I know, right?
+what should we do after we have fun with our friends, friday?
+building the iron man suit Iron Man MK 37 Armor (2)
+whoa! that's cool!
+I know, right?
+when should we get started on that, friday?
+Let's do talking to friends online at tomorrow
+I'm ok with that
+How about those Super advanced chainsaw, I hear it's very crunchy
+what do you mean crunchy?
+sure
+oh man this is fun
+I hear McDonalds is rough to visit three o'clock
+what do you mean rough?
+sure
+^CTraceback (most recent call last):
+	4: from friday.rb:24:in `<main>'
+
+$ ruby friday.rb 
+Hello Sir
+hello to you too, how are you doing?
+greetings good sir
+what are you doing right now?
+baking a cake
+what kind of cake?
+How about we meet up tomorrow
+sure, where do you want to meet?
+I hear Las Vegas is sticky to visit on my birthday
+what do you mean?
+Well, what I mean by that is the Paperclip is very sticky when it's at the Las Vegas
+^CTraceback (most recent call last):
+
