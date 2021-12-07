@@ -20,6 +20,18 @@ class CommonPersonality
       "going to " + place,
       "playing with my " + thing,
     ]
+    @weather_types = [
+      "rain",
+      "snow",
+      "heat",
+      "lightning and thunder",
+      "hail",
+      "tornado",
+      "wind",
+      "foggy",
+      "flash flood",
+      "a maelstorm",
+    ]
   end
 
   def greeting
@@ -114,7 +126,7 @@ class CommonPersonality
 
   def times
     [
-      "three o'clock",
+      "at three o'clock",
       "right now",
       "tomorrow",
       "on my birthday",
@@ -130,6 +142,17 @@ class CommonPersonality
       "How about we meet up " + times,
       "Have you ever been to " + place + "?",
       "I hear " + place + " is " + adjective + " to visit " + times,
+      "I'm not so sure, what do you think about " + thing + "?",
+    ].sample
+  end
+
+  def weather
+    [
+      "It looks like #{@weather_types.sample}!",
+      "Today's weather is #{@weather_types.sample} outside",
+      "The weather is very #{@weather_types.sample} and very #{@weather_types.sample} today",
+      "A massive hailstorm is headed your way!",
+      "How hot is it today? Can you cook an egg on the sidewalk?",
     ].sample
   end
 
@@ -140,7 +163,7 @@ class CommonPersonality
     when /buy.*(duck|geese)/i
       "we don't have birds, try the farmer down the road"
     when /weather/i
-      "It looks like rain!"
+      weather
     when /thank you/i
       "you're welcome"
     when /how (about|are) you/i

@@ -3,7 +3,8 @@
 require './common_personality.rb'
 
 class Jarvis < CommonPersonality
-
+  def reply(prompt)
+  end
 end
 
 j = Jarvis.new
