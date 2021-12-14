@@ -146,6 +146,37 @@ class CommonPersonality
     ].sample
   end
 
+## categories
+#
+# travel
+# food/eating
+# friendship
+# youtube/internet/technology
+# family
+# pets
+# driving
+## 
+
+
+# hi I want to match all the places I used the word food. The word food might be used different ways. Like "food" or food! Or other things too.
+
+
+  def categorizer(stmt)
+    categories = {
+      food: {
+              match: [
+                     /\bfood\b/,
+                     /\beat\b/,
+                     ],
+              result: [
+                      "I like food too!"
+                      ]
+            }
+ 
+    }
+    
+  end
+
   def weather
     [
       "It looks like #{@weather_types.sample}!",

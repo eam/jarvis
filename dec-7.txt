@@ -1,0 +1,40 @@
+Hello Sir
+hello friday, how are you?
+greetings good sir
+greetings to you too friday
+How about those pencil box, I hear it's very grumpy
+I agree
+I hear Santa Cruz Beach Boardwalk is gooey to visit on christmas
+what do you mean, gooey?
+Well, what I mean by that is the present is very sour when it's at the Zoo
+that's cool
+I know, right?
+totally
+Have you ever been to Library?
+oh yes, but not for a long long time
+How about those pencil box, I hear it's very gooey
+what am I going to do with you friday?
+Have you ever been to Safeway?
+oh yes
+How about those present, I hear it's very gooey
+man what's with gooey friday?
+How about we meet up on christmas
+sounds good where should we go?
+I hear Las Vegas is spicy to visit in a minute
+sounds good with me
+How about we meet up right now
+ok
+Have you ever been to Movie theatre?
+yes, I love to go see the movies
+I'm not so sure, what do you think about pencil box?
+I've never heard of a movie called pencil box
+Have you ever been to Rustwater?
+yes
+I'm not so sure, what do you think about pencil box?
+^CTraceback (most recent call last):
+	4: from friday.rb:24:in `<main>'
+	3: from friday.rb:24:in `loop'
+	2: from friday.rb:25:in `block in <main>'
+	1: from friday.rb:25:in `gets'
+friday.rb:25:in `gets': Interrupt
+
