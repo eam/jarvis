@@ -24,5 +24,7 @@ puts f.greeting
 loop {
   prompt = gets
   response = f.reply(prompt)
+  cmd = 'say "' + response + '" 2>/dev/null'
+  system cmd
   puts response
 }

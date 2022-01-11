@@ -4,6 +4,13 @@ require './common_personality.rb'
 
 class Jarvis < CommonPersonality
   def reply(prompt)
+    case
+    when /greetings/
+      "greetings"
+    else
+      super(prompt)
+    end
+
   end
 end
 
